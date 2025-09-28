@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Cars - Lọc</title>
+    <link rel="stylesheet" href="product.css"> </head>
+<body>
+    <!-- Navbar -->
+<header class="navbar" id="navbar">
+  <nav>
+    <div class="logo">
+  <a href="index.html">
+    <img src="images/Logo_Solaris_2023.jpg" alt="Logo" class="logo-image">
+    <span>Solaris</span>
+  </a>
+</div>
+
+
+    <ul class="nav-left">
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="product.html">Mua Xe</a></li>
+      <li><a href="help.html">Dịch Vụ & Hỗ Trợ</a></li>
+      <li><a href="contact.html">Liên hệ</a></li>
+    </ul>
+
+    <ul class="nav-right">
+      <li><a href="register.html" class="btn">Đăng ký</a></li>
+    </ul>
+  </nav>
+</header>
+
+    <header class="header">
+        <h1>Available Cars</h1>
+        <p>Browse our selection of premium vehicles available for your next adventure</p>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search by make, model, or features" onkeyup="filterCars()">
+            <button class="filter-icon">
+                &#9660;
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <p class="showing-count">Showing <span id="carCount">3</span> Cars</p>
+
+        <div class="cars-grid" id="carsGrid">
+
+            <div class="car-card"
+                 data-make="BMW"
+                 data-model="X5"
+                 data-year="2006"
+                 data-type="SUV"
+                 data-fuel="Hybrid"
+                 data-location="New York"
+                 data-transmission="Semi-Automatic">
+                <div class="available-tag">Available Now</div>
+                <img src="images/BMWX5.jpg" alt="BMW X5" class="car-image">
+                <div class="price">$300 /day</div>
+                <div class="car-details">
+                    <h3>BMW X5</h3>
+                    <p class="spec">SUV · 2006</p>
+                    <div class="features">
+                        <span><i class="icon">💺</i> 4 Seats</span>
+                        <span><i class="icon">⛽</i> Hybrid</span>
+                        <span><i class="icon">⚙️</i> Semi-Automatic</span>
+                        <span><i class="icon">📍</i> New York</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card"
+                 data-make="BMW"
+                 data-model="7"
+                 data-year="2022"
+                 data-type="Sedan"
+                 data-fuel="Hybrid"
+                 data-location="New York"
+                 data-transmission="Semi-Automatic">
+                <div class="available-tag">Available Now</div>
+                <img src="images/bmw7.jpg" alt="BMW X5" class="car-image">
+                <div class="price">$300 /day</div>
+                <div class="car-details">
+                    <h3>BMW 7</h3>
+                    <p class="spec">Sedan · 2020</p>
+                    <div class="features">
+                        <span><i class="icon">💺</i> 4 Seats</span>
+                        <span><i class="icon">⛽</i> Hybrid</span>
+                        <span><i class="icon">⚙️</i> Semi-Automatic</span>
+                        <span><i class="icon">📍</i> New York</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card"
+                 data-make="BMW"
+                 data-model="IX"
+                 data-year="2021"
+                 data-type="SUV"
+                 data-fuel="Hybrid"
+                 data-location="New York"
+                 data-transmission="Semi-Automatic">
+                <div class="available-tag">Available Now</div>
+                <img src="images/BMW-iX.jpg" alt="BMW X5" class="car-image">
+                <div class="price">$300 /day</div>
+                <div class="car-details">
+                    <h3>BMW IX</h3>
+                    <p class="spec">SUV · 2021</p>
+                    <div class="features">
+                        <span><i class="icon">💺</i> 4 Seats</span>
+                        <span><i class="icon">⛽</i> Hybrid</span>
+                        <span><i class="icon">⚙️</i> Semi-Automatic</span>
+                        <span><i class="icon">📍</i> New York</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card"
+                 data-make="Toyota"
+                 data-model="Corolla"
+                 data-year="2021"
+                 data-type="Sedan"
+                 data-fuel="Diesel"
+                 data-location="Los Angeles"
+                 data-transmission="Automatic">
+                <div class="available-tag">Available Now</div>
+                <img src="images/TOYOTAC.png" alt="Toyota Corolla" class="car-image">
+                <div class="price">$130 /day</div>
+                <div class="car-details">
+                    <h3>Toyota Corolla</h3>
+                    <p class="spec">Sedan · 2021</p>
+                    <div class="features">
+                        <span><i class="icon">💺</i> 4 Seats</span>
+                        <span><i class="icon">⛽</i> Diesel</span>
+                        <span><i class="icon">⚙️</i> Automatic</span>
+                        <span><i class="icon">📍</i> Los Angeles</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card"
+     data-make="Toyota"
+     data-model="RAV4"
+     data-year="2021"
+     data-type="SUV"
+     data-fuel="Petrol"
+     data-location="Chicago"
+     data-transmission="Manual">
+    <div class="available-tag">Available Now</div>
+    <img src="images/TOYOTAR.jpg" alt="Toyota RAV4" class="car-image">
+    <div class="price">$250 /day</div>
+    <div class="car-details">
+        <h3>Toyota RAV4</h3>
+        <p class="spec">SUV · 2021</p>
+        <div class="features">
+            <span><i class="icon">💺</i> 5 Seats</span>
+            <span><i class="icon">⛽</i> Petrol</span>
+            <span><i class="icon">⚙️</i> Manual</span>
+            <span><i class="icon">📍</i> Chicago</span>
+        </div>
+    </div>
+</div>
+<!-- Toyota Camry -->
+<div class="car-card"
+     data-make="Toyota"
+     data-model="Camry"
+     data-year="2022"
+     data-type="Sedan"
+     data-fuel="Hybrid"
+     data-location="Los Angeles"
+     data-transmission="Automatic">
+    <div class="available-tag">Available Now</div>
+    <img src="images/car2.jpg" alt="Toyota Camry" class="car-image">
+    <div class="price">$220 /day</div>
+    <div class="car-details">
+        <h3>Toyota Camry</h3>
+        <p class="spec">Sedan · 2022</p>
+        <div class="features">
+            <span><i class="icon">💺</i> 5 Seats</span>
+            <span><i class="icon">⛽</i> Hybrid</span>
+            <span><i class="icon">⚙️</i> Automatic</span>
+            <span><i class="icon">📍</i> Los Angeles</span>
+        </div>
+    </div>
+</div>
+<!-- Ford Mustang -->
+<div class="car-card"
+     data-make="Ford"
+     data-model="Mustang"
+     data-year="2021"
+     data-type="Coupe"
+     data-fuel="Gasoline"
+     data-location="Miami"
+     data-transmission="Manual">
+    <div class="available-tag">Available Now</div>
+    <img src="images/car1.jpg" alt="Ford Mustang" class="car-image">
+    <div class="price">$250 /day</div>
+    <div class="car-details">
+        <h3>Ford Mustang E</h3>
+        <p class="spec">Coupe · 2021</p>
+        <div class="features">
+            <span><i class="icon">💺</i> 4 Seats</span>
+            <span><i class="icon">⛽</i> Gasoline</span>
+            <span><i class="icon">⚙️</i> Manual</span>
+            <span><i class="icon">📍</i> Miami</span>
+        </div>
+    </div>
+</div>
+
+<!-- Ford Explorer -->
+<div class="car-card"
+     data-make="Ford"
+     data-model="Explorer"
+     data-year="2022"
+     data-type="SUV"
+     data-fuel="Hybrid"
+     data-location="Chicago"
+     data-transmission="Automatic">
+    <div class="available-tag">Available Now</div>
+    <img src="images/FORD2.jpg" alt="Ford Explorer" class="car-image">
+    <div class="price">$240 /day</div>
+    <div class="car-details">
+        <h3>Ford Explorer</h3>
+        <p class="spec">SUV · 2022</p>
+        <div class="features">
+            <span><i class="icon">💺</i> 7 Seats</span>
+            <span><i class="icon">⛽</i> Hybrid</span>
+            <span><i class="icon">⚙️</i> Automatic</span>
+            <span><i class="icon">📍</i> Chicago</span>
+        </div>
+    </div>
+</div>
+
+<!-- Ford F-150 -->
+<div class="car-card"
+     data-make="Ford"
+     data-model="F-150"
+     data-year="2023"
+     data-type="Pickup"
+     data-fuel="Diesel"
+     data-location="Texas"
+     data-transmission="Automatic">
+    <div class="available-tag">Available Now</div>
+    <img src="images/FORD3.jpg" alt="Ford F-150" class="car-image">
+    <div class="price">$280 /day</div>
+    <div class="car-details">
+        <h3>Ford F-150</h3>
+        <p class="spec">Pickup · 2023</p>
+        <div class="features">
+            <span><i class="icon">💺</i> 5 Seats</span>
+            <span><i class="icon">⛽</i> Diesel</span>
+            <span><i class="icon">⚙️</i> Automatic</span>
+            <span><i class="icon">📍</i> Texas</span>
+        </div>
+    </div>
+</div>
+<!-- Mercedes C-Class -->
+<div class="car-card"
+     data-make="Mercedes"
+     data-model="C-Class"
+     data-year="2022"
+     data-type="Sedan"
+     data-fuel="Gasoline"
+     data-location="Los Angeles"
+     data-transmission="Automatic">
+    <div class="available-tag">Available Now</div>
+    <img src="images/MC1.jpg" alt="Mercedes C-Class" class="car-image">
+    <div class="price">$260 /day</div>
+    <div class="car-details">
+        <h3>Mercedes C-Class</h3>
+        <p class="spec">Sedan · 2022</p>
+        <div class="features">
+            <span><i class="icon">💺</i> 5 Seats</span>
+            <span><i class="icon">⛽</i> Gasoline</span>
+            <span><i class="icon">⚙️</i> Automatic</span>
+            <span><i class="icon">📍</i> Los Angeles</span>
+        </div>
+    </div>
+</div>
+
+<!-- Mercedes GLE -->
+<div class="car-card"
+     data-make="Mercedes"
+     data-model="GLE"
+     data-year="2023"
+     data-type="SUV"
+     data-fuel="Hybrid"
+     data-location="Houston"
+     data-transmission="Automatic">
+    <div class="available-tag">Available Now</div>
+    <img src="images/MC2.JPG" alt="Mercedes GLE" class="car-image">
+    <div class="price">$300 /day</div>
+    <div class="car-details">
+        <h3>Mercedes GLE</h3>
+        <p class="spec">SUV · 2023</p>
+        <div class="features">
+            <span><i class="icon">💺</i> 7 Seats</span>
+            <span><i class="icon">⛽</i> Hybrid</span>
+            <span><i class="icon">⚙️</i> Automatic</span>
+            <span><i class="icon">📍</i> Houston</span>
+        </div>
+    </div>
+</div>
+
+<!-- Mercedes S-Class -->
+<div class="car-card"
+     data-make="Mercedes"
+     data-model="AMG"
+     data-year="2021"
+     data-type="Luxury Sedan"
+     data-fuel="Gasoline"
+     data-location="San Francisco"
+     data-transmission="Automatic">
+    <div class="available-tag">Available Now</div>
+    <img src="images/car3.avif" alt="Mercedes AMG GT" class="car-image">
+    <div class="price">$400 /day</div>
+    <div class="car-details">
+        <h3>Mercedes AMG GT</h3>
+        <p class="spec">Luxury Sedan · 2021</p>
+        <div class="features">
+            <span><i class="icon">💺</i> 5 Seats</span>
+            <span><i class="icon">⛽</i> Gasoline</span>
+            <span><i class="icon">⚙️</i> Automatic</span>
+            <span><i class="icon">📍</i> San Francisco</span>
+        </div>
+    </div>
+</div>
+<!-- VinFast VF 8 -->
+<div class="car-card"
+     data-make="VinFast"
+     data-model="VF8"
+     data-year="2023"
+     data-type="SUV"
+     data-fuel="Electric"
+     data-location="Hà Nội"
+     data-transmission="Automatic">
+    <div class="available-tag">Available Now</div>
+    <img src="images/VF8.jpg" alt="VinFast VF 8" class="car-image">
+    <div class="price">$280 /day</div>
+    <div class="car-details">
+        <h3>VinFast VF 8</h3>
+        <p class="spec">SUV · 2023</p>
+        <div class="features">
+            <span><i class="icon">💺</i> 5 Seats</span>
+            <span><i class="icon">🔋</i> Electric</span>
+            <span><i class="icon">⚙️</i> Automatic</span>
+            <span><i class="icon">📍</i> Hà Nội</span>
+        </div>
+    </div>
+</div>
+
+<!-- VinFast VF 9 -->
+<div class="car-card"
+     data-make="VinFast"
+     data-model="VF9"
+     data-year="2023"
+     data-type="SUV"
+     data-fuel="Electric"
+     data-location="TP. Hồ Chí Minh"
+     data-transmission="Automatic">
+    <div class="available-tag">Available Now</div>
+    <img src="images/car4.jpg" alt="VinFast VF9" class="car-image">
+    <div class="price">$350 /day</div>
+    <div class="car-details">
+        <h3>VinFast VF 9</h3>
+        <p class="spec">SUV · 2023</p>
+        <div class="features">
+            <span><i class="icon">💺</i> 7 Seats</span>
+            <span><i class="icon">🔋</i> Electric</span>
+            <span><i class="icon">⚙️</i> Automatic</span>
+            <span><i class="icon">📍</i> TP. Hồ Chí Minh</span>
+        </div>
+    </div>
+</div>
+
+<!-- VinFast Lux A2.0 -->
+<div class="car-card"
+     data-make="VinFast"
+     data-model="Lux"
+     data-year="2020"
+     data-type="Sedan"
+     data-fuel="Gasoline"
+     data-location="Đà Nẵng"
+     data-transmission="Automatic">
+    <div class="available-tag">Available Now</div>
+    <img src="images/VFA.jpg" alt="VinFast Lux A2.0" class="car-image">
+    <div class="price">$180 /day</div>
+    <div class="car-details">
+        <h3>VinFast Lux A2.0</h3>
+        <p class="spec">Sedan · 2020</p>
+        <div class="features">
+            <span><i class="icon">💺</i> 5 Seats</span>
+            <span><i class="icon">⛽</i> Gasoline</span>
+            <span><i class="icon">⚙️</i> Automatic</span>
+            <span><i class="icon">📍</i> Đà Nẵng</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+        </div>
+    </main>
+    <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Cột logo + mô tả -->
+    <div class="footer-col">
+      <h2 class="logo">
+        <span class="logo-icon">☀️</span><span class="highlight">Solaris</span>
+      </h2>
+      <p>
+        Dịch vụ quản lý và mua bán  xe cao cấp với nhiều lựa chọn xe sang và xe hàng ngày 
+        đáp ứng mọi nhu cầu lái xe của bạn.
+      </p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="far fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <!-- Cột Quick Links -->
+    <div class="footer-col">
+      <h4>LIÊN KẾT NHANH</h4>
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="product.html">Mua xe</a></li>
+        <li><a href="help.html">Dịch vụ và hỗ trợ</a></li>
+        <li><a href="contact.html">Liên hệ</a></li>
+      </ul>
+    </div>
+
+    <!-- Cột Resources -->
+    <div class="footer-col">
+      <h4>TÀI NGUYÊN</h4>
+      <ul>
+        <li><a href="#">Trung tâm hỗ trợ</a></li>
+        <li><a href="#">Điều khoản dịch vụ</a></li>
+        <li><a href="#">Chính sách bảo mật</a></li>
+        <li><a href="#">Bảo hiểm</a></li>
+      </ul>
+    </div>
+
+    <!-- Cột Contact -->
+    <div class="footer-col">
+      <h4>LIÊN HỆ</h4>
+      <p>1234 Luxury Drive</p>
+      <p>Hà Nội</p>
+      <p>+84 123 456 789</p>
+      <p>info@example.com</p>
+    </div>
+  </div>
+
+  <!-- Dòng bản quyền -->
+  <div class="footer-bottom">
+    <p>© 2025 Brand. All rights reserved.</p>
+    <p class="credit">Thiết kế Website bởi Vũ Quang Đức</p>
+
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+    <script src="product.js"></script> </body>
+</html>

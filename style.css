@@ -1,0 +1,690 @@
+/* ==================== RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #000;
+  line-height: 1.5;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  background: transparent;   /* trong suốt ban đầu */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar:hover{
+  background: rgba(0, 0, 0, 0.629); /* khi hover thì nền đen mờ */
+  box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+  color:rgb(12, 12, 12);
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.886);  /* khi cuộn thì thành đen */
+  box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+}
+
+.navbar nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left, .nav-right {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-left a, .nav-right a {
+  position: relative;
+  color: rgb(249, 241, 241);
+  text-decoration: none;
+  font-size: 20px;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* Hiệu ứng gạch chân */
+.nav-left a::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #057af6;
+  transition: width 0.3s ease;
+}
+
+.nav-left a:hover::after,
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  color: #057af6;
+}
+
+/* ==================== LOGO ==================== */
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  font-style: italic;
+  margin: 0 20px;
+}
+.logo a {
+  display: flex;               /* căn ngang logo và chữ */
+  align-items: center;         /* căn giữa theo chiều dọc */
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+  color: #f3efef;
+  transition: color 0.3s ease;
+  letter-spacing: 5px;
+}
+
+.logo a:hover {
+  color: #057af6;
+}
+
+.logo-image {
+  width: 40px;                 /* chỉnh kích thước ảnh */
+  height: auto;
+  margin-right: 10px;          /* khoảng cách giữa ảnh và chữ */
+  border-radius: 6px;          /* bo góc nhẹ (nếu muốn) */
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+  background: url("https://www.ford.com/is/image/Ford/2021-MachE-Gallery-01?qlt=82&wid=1440&hei=600") 
+              no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 50px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Hero text hiệu ứng fade-in + slide-up */
+.overlay h1, 
+.overlay p, 
+.overlay .btn {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+}
+.overlay h1 {
+  animation-delay: 0.2s;
+}
+.overlay p {
+  animation-delay: 0.4s;
+}
+.overlay .btn {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== BUTTON ==================== */
+.btn {
+  position: relative;
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden; /* để làm ripple */
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0,123,255,0.5);
+}
+
+/* Ripple Effect */
+.btn span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background: rgba(255, 255, 255, 0.6);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ==================== ARROWS ==================== */
+.arrows {
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  display: flex;
+  gap: 15px;
+}
+
+.arrow {
+  font-size: 36px;
+  background: rgba(0,0,0,0.5);
+  padding: 8px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.arrow:hover {
+  background: rgba(0,0,0,0.8);
+  transform: scale(1.2);
+}
+/* ==================== ABOUT SECTION ==================== */
+.section-header h1{
+  color: #001f61;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.about {
+  padding: 80px 10%;
+  background: #fff;
+  color: rgb(3, 2, 2);
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap; /* Cho responsive */
+  justify-content: center;
+  border-radius: 15px;
+  margin-bottom: 60px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+}
+.about-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+.about-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-content h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #057af6;
+}
+
+.about-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #0a0a0a;
+}
+
+/* Reuse button style */
+.about-content .btn {
+  background: #057af6;
+}
+.about-content .btn:hover {
+  background: #0056b3;
+}
+.section-header {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: #edf1f5;
+}
+/* ==================== EVENTS SECTION ==================== */
+body {
+  background-color: #021b3a;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.events-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.events-section h2 {
+  margin-bottom: 20px;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px; /* khoảng cách đều giữa các card */
+  transition: transform 0.5s ease-in-out;
+}
+
+.event-card {
+  background: #0b2a4a;
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 350px;
+  max-width: 350px;
+  flex: 0 0 auto;
+}
+
+.event-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.event-card h3 {
+  margin: 15px 0 10px;
+}
+
+.event-card p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+/* <!-- ==================== SERVICE SECTION ==================== --> */
+.carousel-track1 {
+  display: flex;
+  gap: 20px; /* khoảng cách đều giữa các card */
+  transition: transform 0.5s ease-in-out;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  justify-content: center;
+  align-items: center;
+  
+}
+.services-section {
+  text-align: center;
+  background: #fff;
+  padding: 0 20px;
+}
+
+.services-section h1 {
+  margin-bottom: 20px;
+  color: #001f61;
+  font-size: 36px;
+  font-weight: bold;
+  padding-left: 40px;
+  padding-top: 40px;
+}
+.service-card {
+  margin-right: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  padding: 15px;
+  min-width: 300px;
+  max-width: 300px;
+  flex: 0 0 auto;
+  
+}
+
+.service-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  margin: 15px 0 10px;
+  color: #001f61;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+  
+}
+/* Testimonials Section */
+.testimonials {
+  text-align: center;
+  padding: 70px 40px; /* tăng padding cho thoáng */
+  background: #fff;
+}
+
+.testimonials h2 {
+  font-size: 50px; /* lớn hơn */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #001f61;
+  text-transform: uppercase; /* chữ in hoa */
+}
+
+.testimonials h3 {
+  font-size: 55px; /* lớn hơn */
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #001f61;
+}
+
+.testimonials .subtitle {
+  color: #555;
+  margin-bottom: 60px;
+  font-size: 22px; /* to hơn */
+}
+
+.testimonials-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* tăng khoảng cách giữa các card */
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px; /* bo góc to hơn */
+  padding: 30px;
+  width: 350px; /* rộng hơn */
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-12px);
+}
+
+.testimonial-card img {
+  width: 70px; /* avatar to hơn */
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-card h3 {
+  margin: 12px 0 0;
+  font-size: 22px; /* to hơn */
+}
+
+.testimonial-card .location {
+  font-size: 18px; /* tăng size */
+  color: #777;
+}
+
+.stars {
+  color: #007bff;
+  font-size: 26px; /* lớn hơn */
+  margin: 12px 0;
+}
+
+.testimonial-card p {
+  font-size: 18px; /* to hơn */
+  color: #444;
+  line-height: 1.8;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.testimonial-header img {
+  width: 70px; /* đồng bộ với avatar */
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.customer-info h3 {
+  margin: 0;
+  font-size: 20px; /* lớn hơn */
+  font-weight: bold;
+  color: #0d2f66;
+}
+
+.customer-info .location {
+  font-size: 16px; /* tăng size */
+  color: #666;
+}
+
+/* footer */
+.footer {
+  background: #fff;
+  padding: 50px 80px 20px;
+  font-family: Arial, sans-serif;
+  color: #555;
+  border-top: 1px solid #eaeaea;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1 1 220px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #0d2f66;
+}
+
+.logo-icon {
+  font-size: 28px;
+  margin-right: 6px;
+}
+
+.highlight {
+  color: #0071e3;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #0071e3;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0071e3;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-bottom .footer-links a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.footer-bottom .footer-links a:hover {
+  color: #0071e3;
+}
+.credit {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    padding: 10px 0;
+    background: white;
+    font-weight: 500;
+    transition: color 0.4s ease, transform 0.4s ease;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+}
+
+/* Animation fadeInUp */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effect */
+.credit:hover {
+    color: #ff6600;
+    transform: scale(1.05);
+}
+
+
+
+
+
+
