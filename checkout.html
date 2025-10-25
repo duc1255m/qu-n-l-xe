@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh toán - Solaris</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+<header class="navbar" id="navbar">
+  <nav>
+    <div class="logo">
+  <a href="login.html">
+    <img src="images/Logo_Solaris_2023.jpg" alt="Logo" class="logo-image">
+    <span>Solaris</span>
+  </a>
+</div>
+
+
+    <ul class="nav-left">
+      <li><a href="login.html">Trang chủ</a></li>
+      <li><a href="product2.html">Mua Xe</a></li>
+      <li><a href="help2.html">Giới thiệu</a></li>
+      <li><a href="contact2.html">Liên hệ</a></li>
+    </ul>
+
+    <ul class="nav-right">
+      <li class="btn" id="openLoginBtn">TÀI KHOẢN CỦA TÔI</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main class="checkout-container">
+    <h2>CHI TIẾT THANH TOÁN</h2>
+
+    <form class="checkout-form" id="orderForm">
+      <section>
+        <h3>1. Thông tin liên lạc</h3>
+        <input type="text" placeholder="Tên của bạn" required>
+        <input type="email" placeholder="Email của bạn" required>
+      </section>
+
+      <section>
+        <h3>2. Địa chỉ thanh toán</h3>
+        <input type="text" placeholder="Địa chỉ" required>
+        <input type="text" placeholder="Tỉnh / Thành phố" required>
+      </section>
+
+      <section>
+        <h3>3. Các lựa chọn thanh toán</h3>
+<label class="payment-option">
+  <input type="radio" name="payment" checked id="thanh">
+  <span>Thanh toán khi nhận hàng</span>
+</label>
+
+        <p class="alert">💡 Hiện tại cửa hàng chưa hỗ trợ thanh toán online, vui lòng chọn hình thức COD.</p>
+<label class="agree-option">
+  <input type="checkbox" required>
+  <span>Tôi đồng ý với các điều khoản dịch vụ</span>
+</label>
+
+      </section>
+
+      <button type="submit" class="place-order-btn">ĐẶT HÀNG</button>
+    </form>
+
+    <aside class="order-summary">
+      <h3>Tóm tắt đơn hàng</h3>
+      <div class="summary-item">
+        <p>VF9</p><span>$35.00</span>
+      </div>
+      <p>Tổng cộng: <strong>$35.00</strong></p>
+    </aside>
+  </main>
+
+  <!-- Popup xác nhận -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2>✅ THUÊ XE THÀNH CÔNG!</h2>
+      <p>Cảm ơn bạn đã thuê xe tại <strong>SOLARIS</strong>.</p>
+      <button id="closePopup">Về Trang Chủ</button>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('orderForm');
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('closePopup');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      popup.style.display = 'flex';
+    });
+
+    closePopup.addEventListener('click', function() {
+      window.location.href = "login.html"; // quay về giỏ hàng
+    });
+  </script>
+</body>
+   <script src="cart.js"></script> 
+</html>

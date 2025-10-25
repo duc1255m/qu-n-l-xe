@@ -1,0 +1,200 @@
+:root{
+  --accent:#0d6efd;
+  --muted:#777;
+  --card-bg:#fafafa;
+  --container:1200px;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  margin:0;
+  background:#fff;
+  color:#222;
+}
+.username{
+  font-weight:600;
+  color:white;
+}
+
+/* NAVBAR */
+.navbar {
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  background: black;   /* trong suốt ban đầu */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.886);  /* khi cuộn thì thành đen */
+  box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+}
+
+.navbar nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left, .nav-right {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-left a, .nav-right a {
+  position: relative;
+  color: rgb(249, 241, 241);
+  text-decoration: none;
+  font-size: 20px;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* Hiệu ứng gạch chân */
+.nav-left a::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #057af6;
+  transition: width 0.3s ease;
+}
+
+.nav-left a:hover::after,
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  color: #057af6;
+}
+
+/* ==================== LOGO ==================== */
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  font-style: italic;
+  margin: 0 20px;
+}
+.logo a {
+  display: flex;               /* căn ngang logo và chữ */
+  align-items: center;         /* căn giữa theo chiều dọc */
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+  color: #f3efef;
+  transition: color 0.3s ease;
+  letter-spacing: 5px;
+}
+
+.logo a:hover {
+  color: #057af6;
+}
+
+.logo-image {
+  width: 40px;                 /* chỉnh kích thước ảnh */
+  height: auto;
+  margin-right: 10px;          /* khoảng cách giữa ảnh và chữ */
+  border-radius: 6px;          /* bo góc nhẹ (nếu muốn) */
+}
+.container{max-width:var(--container);margin:0 auto;width:100%}
+
+/* brand */
+.brand{display:flex;align-items:center;gap:10px}
+.brand-img{width:36px;height:36px;border-radius:6px;object-fit:cover}
+.brand span{font-weight:700;color:#0d2f66;font-size:20px;margin-left:6px}
+
+/* nav links */
+.main-nav a{margin-right:18px;color:#333;text-decoration:none;font-size:15px}
+.nav-right{display:flex;align-items:center;gap:12px}
+.account-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer}
+.avatar{width:36px;height:36px;border-radius:50%;object-fit:cover}
+.dropdown-menu{
+  position:absolute;
+  right:24px;
+  top:64px;
+  background:#fff;
+  border:1px solid #e6e6e6;
+  width:220px;
+  border-radius:6px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  display:none;
+  z-index:60;
+}
+.dropdown-menu li{padding:10px 14px}
+.dropdown-menu li.divider{border-top:1px solid #f1f1f1}
+.dropdown-menu li a{color:#333;text-decoration:none;display:block}
+
+/* Page header */
+.page-header{padding:100px 0 24px;background:#fff;border-bottom:1px solid #f0f0f0}
+.page-header .container{padding:0 24px}
+.page-header h1{margin:0;font-size:28px;color:#111}
+.page-header .subtitle{color:var(--muted);margin-top:8px}
+
+/* Main layout */
+.account-page{display:flex;gap:30px;padding:30px 24px;max-width:var(--container);margin:0 auto}
+/* Sidebar */
+.sidebar{width:260px}
+.user-card{display:flex;gap:12px;align-items:center;padding:12px;background:var(--card-bg);border-radius:8px;border:1px solid #eee}
+.user-avatar{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.user-name{font-weight:700}
+.user-role{color:var(--muted);font-size:13px}
+
+/* side menu */
+.side-menu{margin-top:20px;padding-left:0}
+.side-menu li{margin-bottom:8px}
+.side-menu a{
+  display:block;padding:10px 12px;border-radius:6px;color:#333;text-decoration:none;border:1px solid transparent
+}
+.side-menu a.active, .side-menu a:hover{
+  background: #f8f9ff;
+  border-color:#eef3ff;
+  color:var(--accent);
+}
+
+/* Content */
+.content{flex:1}
+.tab-content{background:#fff;padding:20px;border-radius:8px;border:1px solid #f0f0f0;margin-bottom:18px}
+.quick-actions{display:flex;gap:12px;margin-top:12px}
+.action{padding:12px 18px;background:#f5f7ff;border-radius:6px;border:1px solid #e9eefc;cursor:pointer;color:var(--accent)}
+
+/* Orders table */
+.orders-table{width:100%;border-collapse:collapse;margin-top:12px}
+.orders-table th, .orders-table td{padding:12px;border-bottom:1px solid #f2f2f2;text-align:left}
+.btn-small{display:inline-block;padding:6px 10px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:13px}
+
+/* Addresses */
+.addresses-grid{display:flex;gap:12px;flex-wrap:wrap}
+.address-card{flex:1;padding:12px;border:1px solid #f0f0f0;border-radius:8px;background:var(--card-bg)}
+
+/* Account form */
+.account-form{display:flex;flex-direction:column;gap:12px}
+.account-form label{display:block;font-size:14px;color:#333}
+.account-form input{width:100%;padding:10px;border-radius:6px;border:1px solid #ddd}
+
+/* Suggestions grid */
+.suggestions{margin-top:8px}
+.product-grid{display:flex;gap:12px;margin-top:12px}
+.product-card{width:220px;border:1px solid #f0f0f0;border-radius:8px;padding:10px;background:#fff;text-align:center}
+.product-card img{width:100%;height:120px;object-fit:cover;border-radius:6px}
+.product-card h4{font-size:14px;margin:8px 0}
+.price{color:var(--muted)}
+
+/* Responsive */
+@media (max-width: 900px){
+  .account-page{flex-direction:column;padding:20px}
+  .sidebar{width:100%}
+  .product-grid{flex-wrap:wrap;justify-content:center}
+  .dropdown-menu{right:12px}
+}

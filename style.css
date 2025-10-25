@@ -142,31 +142,31 @@ body {
   background-position: center;
 }
 
-.overlay h1 {
+.overlay2 h1 {
   font-size: 60px;
   margin-bottom: 10px;
 }
 
-.overlay p {
+.overlay2 p {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
 /* Hero text hiệu ứng fade-in + slide-up */
-.overlay h1, 
-.overlay p, 
-.overlay .btn {
+.overlay2 h1, 
+.overlay2 p, 
+.overlay2 .btn {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 1s ease forwards;
 }
-.overlay h1 {
+.overlay2 h1 {
   animation-delay: 0.2s;
 }
 .overlay p {
   animation-delay: 0.4s;
 }
-.overlay .btn {
+.overlay2 .btn {
   animation-delay: 0.6s;
 }
 
@@ -681,6 +681,119 @@ body {
 .credit:hover {
     color: #ff6600;
     transform: scale(1.05);
+}
+/* Overlay nền mờ */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 999;
+}
+
+/* Popup chung */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px 40px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 1000;
+  width: 90%;
+  max-width: 400px;
+}
+
+.popup-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.popup-content label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.popup-content input[type="text"],
+.popup-content input[type="password"],
+.popup-content input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.btn2 {
+  width: 100%;
+  background: #0071e3;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #005bb5;
+}
+
+.forgot {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  color: #0071e3;
+  text-decoration: none;
+}
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* Quên mật khẩu */
+.popup-content p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+.back-login {
+  text-align: center;
+  margin-top: 10px;
+}
+.back-login a {
+  color: #0071e3;
+  text-decoration: none;
+}
+.back-login a:hover {
+  text-decoration: underline;
+}
+
+/* Nút đóng */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #888;
+  transition: 0.3s;
+}
+.close:hover {
+  color: #000;
 }
 
 

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tài khoản của tôi - Solaris</title>
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="account.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+      <nav>
+    <div class="logo">
+  <a href="../login.html">
+    <img src="../images/Logo_Solaris_2023.jpg" alt="Logo" class="logo-image">
+    <span>Solaris</span>
+  </a>
+</div>
+
+
+    <ul class="nav-left">
+      <li><a href="../login.html">Trang chủ</a></li>
+      <li><a href="../product2.html">Mua Xe</a></li>
+      <li><a href="../help2.html">Giới thiệu</a></li>
+      <li><a href="../contact2.html">Liên hệ</a></li>
+    </ul>
+
+    <ul class="nav-right">
+      <div class="account-dropdown">
+        <button id="accountBtn" class="account-btn">
+          <img src="../images/1.jpg" alt="avatar" class="avatar">
+          <span class="username">Duc1255m</span>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <ul id="accountMenu" class="dropdown-menu">
+          <li><a href="#" data-tab="dashboard">Bảng điều khiển</a></li>
+          <li><a href="#" data-tab="orders">Đơn đặt hàng</a></li>
+          <li><a href="#" data-tab="downloads">Tải xuống</a></li>
+          <li><a href="#" data-tab="addresses">Địa chỉ</a></li>
+          <li><a href="#" data-tab="account-details">Chi tiết tài khoản</a></li>
+          <li><a href="#" id="logoutBtn">Đăng xuất</a></li>
+        </ul>
+      </div>
+    </ul>
+  </nav>
+
+    
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <h1>TÀI KHOẢN CỦA TÔI</h1>
+      <p class="subtitle">Bảng điều khiển</p>
+    </div>
+  </section>
+
+  <!-- ACCOUNT LAYOUT -->
+  <main class="container account-page">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="user-card">
+        <img src="../images/1.jpg" alt="avatar" class="user-avatar">
+        <div class="user-info">
+          <div class="user-name">Duc1255m</div>
+          <div class="user-role">Khách hàng</div>
+        </div>
+      </div>
+
+      <ul class="side-menu" id="sideMenu">
+        <li><a href="#" data-tab="dashboard" class="active">Bảng điều khiển</a></li>
+        <li><a href="#" data-tab="orders">Đơn đặt hàng</a></li>
+        <li><a href="#" data-tab="downloads">Tải xuống</a></li>
+        <li><a href="#" data-tab="addresses">Địa chỉ</a></li>
+        <li><a href="#" data-tab="account-details">Chi tiết tài khoản</a></li>
+        <li><a href="#" id="logoutLink">Đăng xuất</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTENT -->
+    <section class="content">
+      <!-- TAB: Dashboard -->
+      <div class="tab-content" id="dashboard">
+        <h2>Xin chào Duc1255m</h2>
+        <p>Từ bảng điều khiển tài khoản của mình, bạn có thể xem các đơn đặt hàng gần đây, quản lý địa chỉ giao hàng và thanh toán, và chỉnh sửa mật khẩu cũng như chi tiết tài khoản của mình.</p>
+
+        <div class="quick-actions">
+          <button data-tab="orders" class="action">Đơn đặt hàng</button>
+          <button data-tab="downloads" class="action">Tải xuống</button>
+          <button data-tab="account-details" class="action">Chi tiết tài khoản</button>
+        </div>
+      </div>
+
+      <!-- TAB: Orders -->
+      <div class="tab-content" id="orders" style="display:none;">
+        <h2>Đơn đặt hàng</h2>
+        <p>Danh sách đơn đặt hàng gần đây:</p>
+        <table class="orders-table">
+          <thead>
+            <tr><th>Đơn hàng</th><th>Ngày</th><th>Trạng thái</th><th>Tổng</th><th>Hành động</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1001</td>
+              <td>2025-05-01</td>
+              <td>Hoàn tất</td>
+              <td>$35.00</td>
+              <td><a class="btn-small" href="../cart.html">Xem</a></td>
+            </tr>
+            <tr>
+              <td>#1000</td>
+              <td>2025-04-12</td>
+              <td>Đang xử lý</td>
+              <td>$25.00</td>
+              <td><a class="btn-small" href="../cart.html">Xem</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- TAB: Downloads -->
+      <div class="tab-content" id="downloads" style="display:none;">
+        <h2>Tải xuống</h2>
+        <p>Ở đây là các tệp bạn có thể tải về:</p>
+        <ul class="download-list">
+          <li>Hóa đơn  <a href="#" class="btn-small">Tải</a></li>
+          <li>Tài liệu hướng dẫn <a href="#" class="btn-small">Tải</a></li>
+        </ul>
+      </div>
+
+      <!-- TAB: Addresses -->
+      <div class="tab-content" id="addresses" style="display:none;">
+        <h2>Địa chỉ</h2>
+        <div class="addresses-grid">
+          <div class="address-card">
+            <h4>Địa chỉ giao hàng</h4>
+            <p>Nguyễn Văn A<br>123 Đường ABC, Hà Nội<br>Việt Nam</p>
+            <a href="#" class="btn-small">Chỉnh sửa</a>
+          </div>
+          <div class="address-card">
+            <h4>Địa chỉ thanh toán</h4>
+            <p>Nguyễn Văn A<br>123 Đường ABC, Hà Nội<br>Việt Nam</p>
+            <a href="#" class="btn-small">Chỉnh sửa</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Account details -->
+      <div class="tab-content" id="account-details" style="display:none;">
+        <h2>Chi tiết tài khoản</h2>
+        <form id="accountForm" class="account-form">
+          <label>Họ và tên
+            <input type="text" name="fullname" value="Duc1255m" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" value="Duc1255m@example.com" required>
+          </label>
+          <label>Mật khẩu mới
+            <input type="password" name="newpass" placeholder="Để trống nếu không đổi">
+          </label>
+          <label>Xác nhận mật khẩu
+            <input type="password" name="confirmpass" placeholder="Xác nhận mật khẩu">
+          </label>
+          <button type="submit" class="btn-primary">Lưu thay đổi</button>
+        </form>
+      </div>
+
+      <!-- TAB: Logout placeholder (will be triggered by JS) -->
+      <div class="tab-content" id="logout" style="display:none;">
+        <h2>Bạn đã đăng xuất</h2>
+        <p>Cảm ơn — bạn đã đăng xuất khỏi tài khoản.</p>
+      </div>
+
+      <!-- Sản phẩm gợi ý phía dưới (3 cột) -->
+      <div class="suggestions">
+        <h3>CÁC MẪU XE MỚI NHẤT</h3>
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="../images/car1.jpg" alt="Product 1">
+            <h4>MUSTANG-E</h4>
+            <p class="price">$35.00</p>
+          </article>
+          <article class="product-card">
+            <img src="../images/car2.jpg" alt="Product 2">
+            <h4>TOYOTA CAMRY</h4>
+            <p class="price">$25.00</p>
+          </article>
+          <article class="product-card">
+            <img src="../images/car3.avif" alt="Product 3">
+            <h4>MERCEDES-AMG GT</h4>
+            <p class="price">$30.00</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="account.js"></script>
+</body>
+</html>
