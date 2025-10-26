@@ -1,3 +1,4 @@
+/* ==================== RESET & GLOBAL ==================== */
 * {
   margin: 0;
   padding: 0;
@@ -10,32 +11,23 @@
   border: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  color: rgb(20, 19, 19);
-  background-color:white;
+  color: #141313;
+  background-color: #fff;
   line-height: 1.5;
-  padding-top: 40px;
+  padding-top: 60px;
 }
+
+/* ==================== NAVBAR ==================== */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   padding: 15px 40px;
-  background: black;   /* trong suốt ban đầu */
+  background: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,7 +36,7 @@ body {
 }
 
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.886);  /* khi cuộn thì thành đen */
+  background: rgba(0, 0, 0, 0.9);
   box-shadow: 0 2px 15px rgba(0,0,0,0.5);
 }
 
@@ -56,22 +48,19 @@ body {
 }
 
 .nav-left, .nav-right {
-  list-style: none;
   display: flex;
   gap: 30px;
 }
 
 .nav-left a, .nav-right a {
-  position: relative;
-  color: rgb(249, 241, 241);
-  text-decoration: none;
-  font-size: 20px;
+  color: #f9f9f9;
+  font-size: 18px;
   padding-bottom: 5px;
-  transition: color 0.3s ease;
+  position: relative;
+  transition: color 0.3s;
 }
 
-/* Hiệu ứng gạch chân */
-.nav-left a::after{
+.nav-left a::after, .nav-right a::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -82,29 +71,25 @@ body {
   transition: width 0.3s ease;
 }
 
-.nav-left a:hover::after,
-.nav-right a:hover::after {
+.nav-left a:hover::after, .nav-right a:hover::after {
   width: 100%;
 }
 
-.nav-left a:hover,
-.nav-right a:hover {
+.nav-left a:hover, .nav-right a:hover {
   color: #057af6;
 }
-/* button */
+
+/* ==================== BUTTON ==================== */
 .btn {
   display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
+  padding: 10px 18px;
   background: #007bff;
-  color: white;
+  color: #fff;
   border-radius: 5px;
-  text-decoration: none;
   font-size: 14px;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: 0.3s;
   box-shadow: 0 3px 10px rgba(0,123,255,0.4);
   cursor: pointer;
-  width:100%;
 }
 
 .btn:hover {
@@ -115,20 +100,20 @@ body {
 
 /* ==================== LOGO ==================== */
 .logo {
+  display: flex;
+  align-items: center;
   font-size: 28px;
   font-weight: bold;
-  font-style: italic;
-  margin: 0 20px;
-}
-.logo a {
-  display: flex;               /* căn ngang logo và chữ */
-  align-items: center;         /* căn giữa theo chiều dọc */
-  text-decoration: none;
-  font-size: 32px;
-  font-weight: bold;
   color: #f3efef;
-  transition: color 0.3s ease;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
 }
 
 .logo a:hover {
@@ -136,157 +121,17 @@ body {
 }
 
 .logo-image {
-  width: 40px;                 /* chỉnh kích thước ảnh */
-  height: auto;
-  margin-right: 10px;          /* khoảng cách giữa ảnh và chữ */
-  border-radius: 6px;          /* bo góc nhẹ (nếu muốn) */
-}
-/* Help Section */
-.help-section {
-    padding: 50px 0;
-    background: white;
-}
-
-.help-section h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 5px;
-}
-
-.help-section p {
-    text-align: center;
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-}
-
-.help-section ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-.help-section ul li {
-    font-size: 1.1rem;
-    margin: 10px 0;
-}
-
-/* Contact Form */
-.contact {
-  padding: 60px 10%;
-  background: #111;
-  color: #fff;
-  text-align: center;
-}
-
-.contact .heading {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 40px;
-  color: #f4e4b3;
-  letter-spacing: 3px;
-}
-
-.contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.contact-container .map {
-  width: 100%;
-  height: 400px;
-}
-
-.contact-container .form {
-  background: #1a1a1a;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  text-align: left;
-}
-
-.contact-container .form h3 {
-  margin-bottom: 20px;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.input-box {
-  margin-bottom: 15px;
-}
-
-.input-box input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #444;
+  width: 40px;
+  margin-right: 10px;
   border-radius: 6px;
-  background: transparent;
-  color: #fff;
 }
 
-.input-box input::placeholder {
-  color: #bbb;
-}
 
-/* Footer */
-.footer {
-    background: #111;
-    color: white;
-    padding: 20px 0;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.footer-col {
-    max-width: 300px;
-    margin: 10px;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-.logo-icon {
-    font-size: 2rem;
-    margin-right: 5px;
-}
-
-.highlight {
-    color: #ff6600;
-}
-
-.footer p {
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
-
-.social-links {
-    margin-top: 15px;
-}
-
-.social-links a {
-    color: white;
-    margin-right: 10px;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #ff6600;
-}
-/* footer */
+/* ==================== FOOTER ==================== */
 .footer {
   background: #fff;
-  padding: 50px 80px 20px;
-  font-family: Arial, sans-serif;
   color: #555;
+  padding: 50px 80px 20px;
   border-top: 1px solid #eaeaea;
 }
 
@@ -301,32 +146,14 @@ body {
   flex: 1 1 220px;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #0d2f66;
-}
-
-.logo-icon {
-  font-size: 28px;
-  margin-right: 6px;
-}
-
-.highlight {
-  color: #0071e3;
-}
-
 .footer-col h4 {
   font-size: 16px;
-  font-weight: bold;
   margin-bottom: 15px;
   color: #000;
 }
 
 .footer-col ul {
   list-style: none;
-  padding: 0;
 }
 
 .footer-col ul li {
@@ -334,8 +161,8 @@ body {
 }
 
 .footer-col ul li a {
-  text-decoration: none;
   color: #555;
+  text-decoration: none;
   transition: color 0.3s;
 }
 
@@ -343,12 +170,7 @@ body {
   color: #0071e3;
 }
 
-.social-icons {
-  margin-top: 15px;
-}
-
 .social-icons a {
-  display: inline-block;
   margin-right: 12px;
   font-size: 18px;
   color: #555;
@@ -372,77 +194,25 @@ body {
 
 .footer-bottom .footer-links a {
   margin-left: 15px;
-  text-decoration: none;
   color: #666;
+  text-decoration: none;
   transition: color 0.3s;
 }
 
 .footer-bottom .footer-links a:hover {
   color: #0071e3;
 }
-/* Section title */
-main section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-h2 {
-  margin-bottom: 20px;
-  color: #0071e3;
-}
-
-/* Map */
-.map-container {
-  width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Gallery */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 8px;
-  transition: transform 0.4s;
-  cursor: pointer;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* Form */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  text-align: left;
-}
-
-form label {
-  font-size: 14px;
-  font-weight: bold;
-  color: #444;
-}
-
-form input,
-form textarea {
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-form input:focus,
-form textarea:focus {
-  border-color: #0071e3;
-  outline: none;
-}
+.gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .success-message {
+            display: none;
+            animation: slideIn 0.5s ease-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }

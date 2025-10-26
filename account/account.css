@@ -198,3 +198,155 @@ body{
   .product-grid{flex-wrap:wrap;justify-content:center}
   .dropdown-menu{right:12px}
 }
+/* Footer */
+.footer {
+    background: #111;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    max-width: 300px;
+    margin: 10px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+.highlight {
+    color: #ff6600;
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: white;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff6600;
+}
+/* footer */
+.footer {
+  background: #fff;
+  padding: 50px 80px 20px;
+  font-family: Arial, sans-serif;
+  color: #555;
+  border-top: 1px solid #eaeaea;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1 1 220px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #0d2f66;
+}
+
+.logo-icon {
+  font-size: 28px;
+  margin-right: 6px;
+}
+
+.highlight {
+  color: #0071e3;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #0071e3;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0071e3;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-bottom .footer-links a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.footer-bottom .footer-links a:hover {
+  color: #0071e3;
+}
