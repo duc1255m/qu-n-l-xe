@@ -470,3 +470,46 @@ body {
 .footer-bottom .footer-links a:hover {
   color: #0071e3;
 }
+/* ================== ORDER SUMMARY (ẢNH VÀ BỐ CỤC) ================== */
+.order-summary {
+  width: 30%;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.summary-item img.summary-image {
+  width: 100px;        /* kích thước cố định */
+  height: 70px;
+  object-fit: cover;   /* không bị méo ảnh */
+  border-radius: 6px;
+  flex-shrink: 0;      /* không co lại khi thu nhỏ */
+}
+
+.summary-item p {
+  flex-grow: 1;        /* chữ chiếm khoảng giữa */
+  margin: 0 15px;
+  font-weight: 500;
+  color: #222;
+}
+
+.summary-item span {
+  font-weight: bold;
+  color: #b87333;
+}
+
+/* Căn chỉnh tổng tiền nổi bật hơn */
+.order-summary p strong {
+  font-size: 18px;
+  color: #a67c52;
+}

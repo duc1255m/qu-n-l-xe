@@ -26,3 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
     form.reset(); // Reset form sau khi gửi
   });
 });
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Ngăn form tải lại trang
+  alert("Đã gửi thành công!");
+  this.reset(); // Xóa nội dung form sau khi gửi
+});

@@ -30,3 +30,8 @@ const openBtn = document.getElementById("openLoginBtn");
 openBtn.addEventListener("click", () => {
     window.location.href = "account/account.html"; 
 });
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Ngăn form tải lại trang
+  alert("Đã gửi thành công!");
+  this.reset(); // Xóa nội dung form sau khi gửi
+});
